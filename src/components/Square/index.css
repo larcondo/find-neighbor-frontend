@@ -1,0 +1,20 @@
+.square {
+  width: 32px;
+  aspect-ratio: 1/1;
+  background-color: #424242;
+  border: 1px solid #212121;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #848484;
+  /* color: transparent; */
+}
+
+.square:hover {
+  border: 1px solid #848484;
+}
+
+.square.active {
+  background-color: steelblue;
+  color: hsl(207, 44%, 34%);
+}
