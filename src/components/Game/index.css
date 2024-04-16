@@ -1,0 +1,27 @@
+.game-container {
+  display: flex;
+}
+
+.game-container .reset-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.player1, .player2 {
+  padding-top: 40px;
+}
+
+.player1 p, .player2 p {
+  margin: 0;
+}
+
+.player1 > .name.playing,
+.player2 > .name.playing {
+  background-color: green;
+}
+
+.player1 > .name.notplaying,
+.player2 > .name.notplaying {
+  background-color: initial;
+}
+
