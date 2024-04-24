@@ -1,4 +1,6 @@
-export const BoardArray = [...Array(100).keys()]
+export const baseAPIUrl = 'http://localhost:3002';
+
+export const BoardArray = [...Array(100).keys()];
 
 export const TOTAL_PIECES = [
   { id: '19a321f9', type: 'L1', pos: [1,11,12] },
@@ -34,7 +36,7 @@ export const TOTAL_PIECES = [
   { id: '2d6bd662', type: 'L2', pos: [84,85,95] },
   { id: '8d5a1c8a', type: 'L3', pos: [87,96,97] },
   { id: '3011b8b5', type: 'L4', pos: [80,81,90] },
-]
+];
 
 /**
  * BACKEND

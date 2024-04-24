@@ -4,3 +4,28 @@
   /* padding: 2rem; */
   text-align: center;
 }
+
+
+.formPlayer {
+  /* border: 1px solid gray; */
+  margin: 100px 0;
+  padding: 20px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formPlayer input {
+  padding: 5px 10px;
+}
+
+.formPlayer label {
+  text-align: left;
+}
+
+.formPlayer button {
+  padding: 10px 20px;
+  width: fit-content;
+  align-self: center;
+}
