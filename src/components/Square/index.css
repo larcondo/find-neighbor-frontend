@@ -1,13 +1,12 @@
 .square {
-  width: 32px;
+  width: 25px;
   aspect-ratio: 1/1;
   background-color: #424242;
   border: 1px solid #212121;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 12px;
-  color: #848484;
-  /* color: transparent; */
+  font-size: 8px;
+  color: transparent;
 }
 
 .square:hover {
@@ -16,5 +15,12 @@
 
 .square.active {
   background-color: steelblue;
-  color: hsl(207, 44%, 34%);
+  /* color: hsl(207, 44%, 34%); */
+}
+
+.header {
+  /* visibility: hidden; */
+  border: none;
+  background-color: transparent;
+  color: #848484;
 }
