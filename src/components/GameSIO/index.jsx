@@ -4,11 +4,12 @@ import Board from '../Board'
 import PlayerPieces from '../PlayerPieces'
 import WinnerMessage from '../WinnerMessage'
 
-const GameSIO = ({ game, playerName, addPiece, finalizar }) => {
-  if (![game.player1.player_name, game.player2.player_name].includes(playerName)) return null
+const GameSIO = ({ game, me, addPiece, finalizar }) => {
+  if (!game) return null
+  if (!game.player1 || !game.player2) return null 
 
-  const player = game.player1.player_name === playerName ? game.player1 : game.player2
-  const rival = game.player1.player_name === playerName ? game.player2 : game.player1
+  const player = game.player1.player_name === me.player_name ? game.player1 : game.player2
+  const rival = game.player1.player_name === me.player_name ? game.player2 : game.player1
   const turn = game.turn === player.player_role
   const board = game.board
 

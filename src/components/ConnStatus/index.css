@@ -1,0 +1,16 @@
+.conn-status {
+  /* background-color: darkgreen; */
+  position: fixed;
+  bottom: -5px;
+  left: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.conn-status .connected {
+  color: seagreen;
+}
+
+.conn-status span {
+  color: darkgray;
+}

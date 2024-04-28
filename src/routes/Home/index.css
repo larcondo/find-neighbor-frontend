@@ -1,0 +1,11 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+
+.home-container > button {
+  padding: 1em 2em;
+  cursor: pointer;
+}
