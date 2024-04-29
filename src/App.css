@@ -1,20 +1,13 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  /* padding: 2rem; */
-  text-align: center;
+  width: 100%;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
 }
 
 .formPlayer {
-  /* border: 1px solid gray; */
-  margin: 100px 0;
   padding: 20px;
   min-width: 300px;
   display: flex;

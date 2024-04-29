@@ -1,0 +1,10 @@
+.new-game-container {
+  min-height: 90vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.new-game-container title {
+  padding: 20px 0;
+}

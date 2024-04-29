@@ -10,12 +10,10 @@ const Board = ({ rows, columns, boardState }) => {
   const rowArray = [...Array(rows).keys()]
 
   return(
-    <>
-      <div className='board'>
-        <TopHeader length={10} />
-        { rowArray.map( r => <BoardRow length={columns} key={r} nRow={r} boardArray={boardState} />)}
-      </div>
-    </>
+    <div className='board'>
+      <TopHeader length={10} />
+      { rowArray.map( r => <BoardRow length={columns} key={r} nRow={r} boardArray={boardState} />)}
+    </div>
   )
 }
 

@@ -6,13 +6,15 @@ const Home = () => {
 
   return(
     <div className='home-container'>
-      <h1>Home</h1>
-      <button type='button' onClick={() => navigate('/newgame')}>
-        Nueva partida
-      </button>
-      <button type='button' onClick={() => navigate('/join')}>
-        Unirse a partida
-      </button>
+      <h1 className='title'>Home</h1>
+      <div className='buttons'>
+        <button type='button' onClick={() => navigate('/newgame')}>
+          Nueva partida
+        </button>
+        <button type='button' onClick={() => navigate('/join')}>
+          Unirse a partida
+        </button>
+      </div>
     </div>
   )
 }

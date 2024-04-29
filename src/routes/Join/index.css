@@ -1,0 +1,6 @@
+.join-game-container {
+  min-height: 90vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}

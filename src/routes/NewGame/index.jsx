@@ -1,3 +1,4 @@
+import './index.css'
 import { useSelector } from 'react-redux'
 import NewGameForm from '../../components/NewGameForm'
 import { useEffect } from 'react'
@@ -10,7 +11,8 @@ const NewGame = ({ socket }) => {
   }, [])
 
   return(
-    <div>
+    <div className='new-game-container'>
+      <h1 className='title'>New Game</h1>
       <NewGameForm isConnected={isConnected} socket={socket} />
     </div>
   )

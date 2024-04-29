@@ -1,11 +1,28 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1em;
+  align-items: center;
+  min-height: 90vh;
 }
 
-.home-container > button {
-  padding: 1em 2em;
+.home-container .title {
+  margin: 0;
+  padding: 20px 0;
+}
+
+.home-container .buttons {
+  width: 60%;
+  max-width: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.25;
+}
+
+.home-container button {
+  padding: 1em;
+  width: 100%;
   cursor: pointer;
 }

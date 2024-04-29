@@ -2,6 +2,7 @@ import './index.css'
 
 import Board from '../Board'
 import PlayerPieces from '../PlayerPieces'
+import RivalPieces from './RivalPieces'
 import WinnerMessage from '../WinnerMessage'
 
 const GameSIO = ({ game, me, addPiece, finalizar }) => {
@@ -20,50 +21,35 @@ const GameSIO = ({ game, me, addPiece, finalizar }) => {
 
   return(
     <div className='game-container'>
-      <div>
-        <h2>Find Neighbor</h2>
-        <Board
-          rows={10} columns={10}
-          boardState={board}
-        />
-      </div>
+      <h2 className='title'>Find Neighbor</h2>
+      <Board
+        rows={10} columns={10}
+        boardState={board}
+      />
 
-      <div className='player2'>
-        <p className={ !turn ? 'name playing' : 'name notplaying'}>{ rival.player_name }</p>
+      <div className='rival-container'>
+        <div className='rival-data'>
+          <span className={ !turn ? 'name playing' : 'name notplaying'}>{ rival.player_name }</span>
+          <span className='pieces-left'><b>{ rival.pieces.length }</b> piezas</span>
+        </div>
         <RivalPieces quantity={rival.pieces.length} />
-        <p>A tu rival le quedan { rival.pieces.length } piezas</p>
       </div>
 
-      <div className='player1'>
-        <p className={ turn ? 'name playing' : 'name notplaying'}>{ player.player_name }</p>
-        <p>Piezas restantes: { player.pieces.length }</p>
+      <div className='player'>
         <PlayerPieces pieces={player.pieces} addPiece={addPiece} isPlayerTurn={turn} />
+        <div className='player-data'>
+          <span className={ turn ? 'name playing' : 'name notplaying'}>You: { player.player_name }</span>
+          <span className='pieces-left'><b>{ player.pieces.length }</b> piezas</span>
+        </div>
       </div>
 
-      <p style={{ fontSize: '10px', marginTop: '30px' }}>Partida: { game.partida }</p>
+      <div>
+        <span style={{ fontSize: '10px', marginRight: '2em' }}>Partida: { game.partida }</span>
+        <button onClick={finalizar}>Finalizar</button>
+      </div>
       
-      <button onClick={finalizar}>Finalizar</button>
 
       <WinnerMessage gameStatus={gameSt}  />
-    </div>
-  )
-}
-
-const RivalPieces = ({ quantity }) => {
-  if (!quantity) return null
-
-  const arreglo = new Array(quantity).fill(1);
-
-  return(
-    <div className='rival-pieces' style={{ transform: `translateX(${4*(arreglo.length-1)}px)`}}>
-      { arreglo.map( (p, index) =>
-        <div key={index} className='rival-piece' style={{
-          transform: `
-            translateX(${-5*index}px)
-            rotate(${(index - (arreglo.length-1)/2)*5}deg)
-          `
-        }}></div>
-      )}
     </div>
   )
 }
