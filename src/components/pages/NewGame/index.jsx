@@ -1,7 +1,8 @@
 import './index.css'
-import { useSelector } from 'react-redux'
-import NewGameForm from '../../components/NewGameForm'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+
+import NewGameForm from '../../common/NewGameForm'
 
 const NewGame = ({ socket }) => {
   const isConnected = useSelector(state => state.connection.isConnected)

@@ -3,11 +3,11 @@ import { createBrowserRouter } from 'react-router-dom'
 import { socket } from './socket';
 
 import App from './App';
-import Home from './routes/Home'
-import NewGame from './routes/NewGame'
-import Join from './routes/Join'
-import WaitingRival from './routes/WaitingRival'
-import Game from './routes/Game';
+import Home from './components/pages/Home'
+import NewGame from './components/pages/NewGame'
+import Join from './components/pages/Join'
+import WaitingRival from './components/pages/WaitingRival'
+import Game from './components/pages/Game';
 
 const router = createBrowserRouter([
   {

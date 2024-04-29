@@ -1,7 +1,7 @@
 import './index.css'
 import { useState, useEffect } from 'react'
-import { shuffleArray } from '../../utils/functions'
-import { TOTAL_PIECES } from '../../utils/constants'
+import { shuffleArray } from '../../../utils/functions'
+import { TOTAL_PIECES } from '../../../utils/constants'
 
 import game from '../../services/game'
 

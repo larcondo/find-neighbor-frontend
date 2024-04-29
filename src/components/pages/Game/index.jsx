@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
-import GameSIO from '../../components/GameSIO'
+
+import GameSIO from '../../common/GameSIO'
 
 const Game = ({ socket }) => {
   const game = useSelector(state => state.game)

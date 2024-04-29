@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setMe } from '../../reducers/meReducer'
+import { setMe } from '../../../reducers/meReducer'
 
 const NewGameForm = ({ isConnected, socket }) => {
   const dispatch = useDispatch()

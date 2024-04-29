@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { socket } from './socket'
 import { Outlet, useNavigate } from 'react-router-dom'
 
-import ConnStatus from './components/ConnStatus'
+import ConnStatus from './components/common/ConnStatus'
 
 import { useDispatch } from 'react-redux'
 import { initGame, endGame, setGameStatus } from './reducers/gameReducer'
