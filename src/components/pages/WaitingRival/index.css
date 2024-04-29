@@ -8,3 +8,31 @@
 .waiting-rival-container h2 {
   margin: 0;
 }
+
+.id-container {
+  display: flex;
+  gap: 20px;
+}
+
+.copy-to-clipboard-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.copy-to-clipboard-button:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.id-container .text {
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  text-align: center;
+  color: #acacac;
+}
