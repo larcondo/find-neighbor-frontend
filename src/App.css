@@ -12,19 +12,12 @@ main {
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.formPlayer input {
-  padding: 5px 10px;
-}
-
-.formPlayer label {
-  text-align: left;
 }
 
 .formPlayer button {
   padding: 10px 20px;
   width: fit-content;
   align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
 }

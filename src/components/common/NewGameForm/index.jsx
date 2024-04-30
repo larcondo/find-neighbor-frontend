@@ -2,9 +2,14 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setMe } from '../../../reducers/meReducer'
 
+import TextInput from '../TextInput'
+
+const namePattern = new RegExp('^[0-9a-zA-Zá-ú]{4,}$');
+
 const NewGameForm = ({ isConnected, socket }) => {
   const dispatch = useDispatch()
   const [playerName, setPlayerName] = useState('')
+  const [errorMessage, setErrorMessage] = useState('Requerido.')
 
   const onSubmit = e => {
     e.preventDefault()
@@ -15,19 +20,36 @@ const NewGameForm = ({ isConnected, socket }) => {
     socket.emit('nueva-partida', playerName)
   }
 
+  const onNameChange = e => {
+    setPlayerName(e.target.value)
+    if (e.target.value.length < 1) return setErrorMessage('Requerido.')
+    if (e.target.value.length < 4) return setErrorMessage('Nombre demasiado corto.')
+
+    const isValid = namePattern.test(e.target.value)
+
+    setErrorMessage(
+      isValid ? null : 'El nombre debe contener 0-9, a-z o A-Z.'
+    )
+  }
+
   return(
     <form className='formPlayer' onSubmit={onSubmit}>
-      <p>{ isConnected ? 'Conectado' : 'NO Conectado' }</p>
 
-      <label htmlFor='p1name'>Tu nombre (player1):</label>
-      <input type='text'
+      <TextInput
         name='p1name'
-        id='p1name'
+        label='Player1:'
+        placeholder='Tu nombre...'
         value={playerName}
-        onChange={e => setPlayerName(e.target.value)} />
-      
-      <button type='submit'>Aceptar</button>
+        onChange={onNameChange}
+        errMessage={errorMessage}
+        validMessage='Válido'
+      />
 
+      <button type='submit' disabled={errorMessage}>
+        Aceptar
+      </button>
+
+      <p>{ isConnected ? 'Conectado' : 'NO Conectado' }</p>
     </form>
   )
 }
