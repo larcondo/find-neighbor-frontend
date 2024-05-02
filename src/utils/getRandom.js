@@ -32,7 +32,7 @@ export const TOTAL_PIECES = [
   { id: '03c6faa9', type: 'L4', pos: [52,53,62] },
   { id: 'a51ab665', type: 'L4', pos: [76,77,86] },
   { id: '3011b8b5', type: 'L4', pos: [80,81,90] },
-]
+];
 const auxArray = [...TOTAL_PIECES];
 
 // let index = Math.floor(Math.random() * auxArray.length)
@@ -42,12 +42,12 @@ const auxArray = [...TOTAL_PIECES];
 // console.log(auxArray.slice(index, index+1)[0])
 // index = Math.floor(Math.random() * auxArray.length)
 // console.log(auxArray.slice(index, index+1)[0])
-shuffleArray(auxArray)
-console.log(auxArray)
+shuffleArray(auxArray);
+// console.log(auxArray)
 
 function shuffleArray(array) {
   for(let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i+1));
-    [array[i], array[j]] = [array[j], array[i]]
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }

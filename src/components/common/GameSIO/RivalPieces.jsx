@@ -1,21 +1,20 @@
-import './RivalPieces.css'
+import './RivalPieces.css';
 
 const RivalPieces = ({ quantity, pieceWidth = 30 }) => {
-  if (!quantity) return null
+  if (!quantity) return null;
 
   // Max len = 10
-  const len = quantity > 10 ? 10 : quantity
+  const len = quantity > 10 ? 10 : quantity;
   const arreglo = new Array(len).fill(1);
-  
+
   const isEven = len % 2 === 0;
 
-  const angles = [0, 0, 20, 20, 20, 20, 17, 15, 15, 15, 12, 12]
+  const angles = [0, 0, 20, 20, 20, 20, 17, 15, 15, 15, 12, 12];
 
   const angle = angles[len];
   const half = isEven ? len/2 - 0.5 : Math.floor(len/2);
 
   return(
-    <>
     <div className='rival-pieces'>
       { arreglo.map( (p, index) =>
         <div key={index}
@@ -29,9 +28,7 @@ const RivalPieces = ({ quantity, pieceWidth = 30 }) => {
         ></div>
       )}
     </div>
-    {/* { quantity > 10 && <p>+10</p> } */}
-    </>
-  )
-}
+  );
+};
 
-export default RivalPieces
+export default RivalPieces;

@@ -6,11 +6,11 @@
 export const board = {
   actualValues: [],
   actualTurn: 'P1',
-}
+};
 
 export const deck = {
   pieces: [],
-}
+};
 
 export const players = {
   myself: {
@@ -19,5 +19,5 @@ export const players = {
   opponent: {
     pieces: []
   }
-}
+};
 

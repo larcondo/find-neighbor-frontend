@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   partida: null,
@@ -6,7 +6,7 @@ const initialState = {
   player2: null,
   board: [],
   turn: 'player1',
-}
+};
 
 const gameSlice = createSlice({
   name: 'game',
@@ -16,20 +16,20 @@ const gameSlice = createSlice({
       return {
         ...state,
         partida: action.payload.gameId,
-      }
+      };
     },
     setGameStatus(state, action) {
       return {
         ...state,
         ...action.payload,
-      }
+      };
     },
     endGame() {
-      return initialState 
+      return initialState;
     }
   }
-})
+});
 
-export const { initGame, setGameStatus, endGame } = gameSlice.actions
+export const { initGame, setGameStatus, endGame } = gameSlice.actions;
 
-export default gameSlice.reducer
+export default gameSlice.reducer;

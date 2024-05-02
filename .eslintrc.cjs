@@ -12,6 +12,18 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    'indent': ['error', 2],
+    'linebreak-style': ['error', 'unix'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'always'],
+    'eqeqeq': 'error',
+    'no-trailing-spaces': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'no-console': 'warn',
+    'no-unused-vars': 'warn',
+    'arrow-spacing': [
+      'error', { 'before': true, 'after': true }
+    ],
     'react/prop-types': 0,
     'react-hooks/exhaustive-deps': 0,
     'react/jsx-no-target-blank': 'off',

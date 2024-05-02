@@ -37,18 +37,3 @@ export const TOTAL_PIECES = [
   { id: '8d5a1c8a', type: 'L3', pos: [87,96,97] },
   { id: '3011b8b5', type: 'L4', pos: [80,81,90] },
 ];
-
-/**
- * BACKEND
- * 
- * - Tabla con fichas iniciales (ordenadas o no)
- * 
- * Iniciar Partida:
- * - Tabla de jugador con nombre y datos
- * - Tabla con piezas de cada jugador (puede ser 1 tabla donde cada ficha esté asociada a cada jugador)
- * - Tabla con deck (inicialmente completo con las fichas iniciales - no se pueden agregar fichas)
- * - Tabla con tablero actual (inicialmente vacio)
- * 
- * 
- * 
- */

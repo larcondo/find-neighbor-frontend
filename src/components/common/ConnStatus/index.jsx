@@ -1,12 +1,12 @@
-import './index.css'
-import { useSelector } from 'react-redux'
+import './index.css';
+import { useSelector } from 'react-redux';
 
 const ConnStatus = () => {
-  const connection = useSelector(state => state.connection)
-  
-  if (!connection) return null
+  const connection = useSelector(state => state.connection);
 
-  const connectionClass = connection.isConnected ? 'connected' : null
+  if (!connection) return null;
+
+  const connectionClass = connection.isConnected ? 'connected' : null;
 
   return(
     <p className='conn-status'>
@@ -16,7 +16,7 @@ const ConnStatus = () => {
       { ' ' }
       <span>{ connection.id }</span>
     </p>
-  )
-}
+  );
+};
 
-export default ConnStatus
+export default ConnStatus;

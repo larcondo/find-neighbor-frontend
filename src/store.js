@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
-import gameReducer from './reducers/gameReducer'
-import meReducer from './reducers/meReducer'
-import connectionReducer from './reducers/connectionReducer'
+import { configureStore } from '@reduxjs/toolkit';
+import gameReducer from './reducers/gameReducer';
+import meReducer from './reducers/meReducer';
+import connectionReducer from './reducers/connectionReducer';
 
 const store = configureStore({
   reducer: {
@@ -9,6 +9,6 @@ const store = configureStore({
     me: meReducer,
     connection: connectionReducer,
   }
-})
+});
 
-export default store
+export default store;

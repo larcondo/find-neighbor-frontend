@@ -1,23 +1,23 @@
-import './index.css'
+import './index.css';
 
-import Board from '../Board'
-import PlayerPieces from '../PlayerPieces'
-import RivalPieces from './RivalPieces'
-import WinnerMessage from '../WinnerMessage'
+import Board from '../Board';
+import PlayerPieces from '../PlayerPieces';
+import RivalPieces from './RivalPieces';
+import WinnerMessage from '../WinnerMessage';
 
 const GameSIO = ({ game, me, addPiece, finalizar }) => {
-  if (!game) return null
-  if (!game.player1 || !game.player2) return null 
+  if (!game) return null;
+  if (!game.player1 || !game.player2) return null;
 
-  const player = game.player1.player_name === me.player_name ? game.player1 : game.player2
-  const rival = game.player1.player_name === me.player_name ? game.player2 : game.player1
-  const turn = game.turn === player.player_role
-  const board = game.board
+  const player = game.player1.player_name === me.player_name ? game.player1 : game.player2;
+  const rival = game.player1.player_name === me.player_name ? game.player2 : game.player1;
+  const turn = game.turn === player.player_role;
+  const board = game.board;
 
   const gameSt = {
     gameOver: player.pieces.length < 1 || rival.pieces.length < 1,
     winner: player.pieces.length < 1 ? player.player_name : rival.pieces.length < 1 ? rival.player_name : null
-  }
+  };
 
   return(
     <div className='game-container'>
@@ -47,11 +47,10 @@ const GameSIO = ({ game, me, addPiece, finalizar }) => {
         <span style={{ fontSize: '10px', marginRight: '2em' }}>Partida: { game.partida }</span>
         <button onClick={finalizar}>Finalizar</button>
       </div>
-      
 
       <WinnerMessage gameStatus={gameSt}  />
     </div>
-  )
-}
+  );
+};
 
-export default GameSIO
+export default GameSIO;

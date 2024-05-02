@@ -1,5 +1,5 @@
-import './index.css'
-import { MdCheck } from 'react-icons/md'
+import './index.css';
+import { MdCheck } from 'react-icons/md';
 
 const TextInput = ({
   label,
@@ -20,17 +20,18 @@ const TextInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        autoComplete='off'
       />
       { errMessage
         ? <span className='input-error message'>
           { errMessage }
         </span>
         : <span className='input-valid message'>
-            <MdCheck className='check-icon' />{ validMessage }
-          </span>
+          <MdCheck className='check-icon' />{ validMessage }
+        </span>
       }
     </div>
-  )
-}
+  );
+};
 
-export default TextInput
+export default TextInput;

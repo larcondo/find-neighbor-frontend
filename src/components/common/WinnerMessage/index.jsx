@@ -1,9 +1,9 @@
-import './index.css'
+import './index.css';
 
 const WinnerMessage = ({ gameStatus }) => {
-  if (!gameStatus) return null
+  if (!gameStatus) return null;
 
-  if (!gameStatus.gameOver) return null
+  if (!gameStatus.gameOver) return null;
 
   return(
     <div className='winner-message'>
@@ -13,7 +13,7 @@ const WinnerMessage = ({ gameStatus }) => {
         <p>¡Has ganado!🏆</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WinnerMessage
+export default WinnerMessage;

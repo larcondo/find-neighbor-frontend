@@ -1,8 +1,8 @@
-import './index.css'
-import { useNavigate } from 'react-router-dom'
+import './index.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return(
     <div className='home-container'>
@@ -16,7 +16,7 @@ const Home = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

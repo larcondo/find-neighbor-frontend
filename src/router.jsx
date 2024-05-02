@@ -1,12 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom';
 
 import { socket } from './socket';
 
 import App from './App';
-import Home from './components/pages/Home'
-import NewGame from './components/pages/NewGame'
-import Join from './components/pages/Join'
-import WaitingRival from './components/pages/WaitingRival'
+import Home from './components/pages/Home';
+import NewGame from './components/pages/NewGame';
+import Join from './components/pages/Join';
+import WaitingRival from './components/pages/WaitingRival';
 import Game from './components/pages/Game';
 
 const router = createBrowserRouter([
@@ -38,4 +38,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router
+export default router;
