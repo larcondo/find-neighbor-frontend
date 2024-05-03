@@ -36,11 +36,11 @@ const GameSIO = ({ game, me, addPiece, finalizar }) => {
       </div>
 
       <div className='player'>
-        <PlayerPieces pieces={player.pieces} addPiece={addPiece} isPlayerTurn={turn} />
         <div className='player-data'>
           <span className={ turn ? 'name playing' : 'name notplaying'}>You: { player.player_name }</span>
           <span className='pieces-left'><b>{ player.pieces.length }</b> piezas</span>
         </div>
+        <PlayerPieces pieces={player.pieces} addPiece={addPiece} isPlayerTurn={turn} />
       </div>
 
       <div>
@@ -48,7 +48,7 @@ const GameSIO = ({ game, me, addPiece, finalizar }) => {
         <button onClick={finalizar}>Finalizar</button>
       </div>
 
-      <WinnerMessage gameStatus={gameSt}  />
+      <WinnerMessage gameStatus={gameSt} action={finalizar} />
     </div>
   );
 };

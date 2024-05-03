@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setMe } from '../../../reducers/meReducer';
 
 import TextInput from '../TextInput';
+import Button from '../Button';
 
 const namePattern = new RegExp('^[0-9a-zA-Zá-ú]{4,}$');
 
@@ -45,9 +46,9 @@ const NewGameForm = ({ isConnected, socket }) => {
         validMessage='Válido'
       />
 
-      <button type='submit' disabled={errorMessage}>
+      <Button type='submit' disabled={errorMessage}>
         Aceptar
-      </button>
+      </Button>
 
       <p>{ isConnected ? 'Conectado' : 'NO Conectado' }</p>
     </form>

@@ -1,4 +1,4 @@
-.winner-message {
+.winner-message-container {
   position: absolute;
   z-index: 10;
   top: 200px;
@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.winner-message > div {
+.winner-message {
   padding: 1em 0;
   background-color: seagreen;
   /* color: #c3c3c3; */

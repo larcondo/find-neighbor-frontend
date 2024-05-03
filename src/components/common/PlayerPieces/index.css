@@ -1,14 +1,28 @@
 .player-pieces {
-  /* display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(4, 25%); */
   width: 350px;
-  /* min-width: calc(30px * 3.5 * 2); */
-
-  /* background-color: #303030; */
   margin: 0 10px;
 
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
+}
+
+.player-pieces::-webkit-scrollbar {
+  height: 6px;
+  cursor: pointer;
+}
+
+.player-pieces::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 6px;
+}
+
+.player-pieces::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.1);
+}
+
+
+.player-pieces::-webkit-scrollbar-button {
+  background-color: yellow;
+  width: 0px;
 }
