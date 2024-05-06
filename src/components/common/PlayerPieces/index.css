@@ -25,4 +25,19 @@
 .player-pieces::-webkit-scrollbar-button {
   background-color: yellow;
   width: 0px;
+  height: 0px;
+}
+
+@media screen and (min-width: 1000px) {
+  .player-pieces {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    max-height: 100%;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
 }

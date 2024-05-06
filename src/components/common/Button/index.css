@@ -4,8 +4,33 @@
   border: none;
   cursor: pointer;
   background-color: steelblue;
+  position: relative;
 }
 
 .button:hover {
   background-color: hsl(207, 44%, 44%);
+}
+
+.button::before, .button::after {
+  content: '';
+  width: 6%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  position: absolute;
+}
+
+.button::before {
+  top: 5px;
+  left: 5px;
+  border-top: 0.25em solid rgba(0,0,0,0.15);
+  border-left: 0.25em solid rgba(0,0,0,0.15);
+  border-radius: 0.5em 0 0 0;
+}
+
+.button::after {
+  bottom: 5px;
+  right: 5px;
+  border-bottom: 0.25em solid rgba(0,0,0,0.15);
+  border-right: 0.25em solid rgba(0,0,0,0.15);
+  border-radius: 0 0 0.5em 0;
 }

@@ -4,6 +4,9 @@ import Board from '../Board';
 import PlayerPieces from '../PlayerPieces';
 import RivalPieces from './RivalPieces';
 import WinnerMessage from '../WinnerMessage';
+import Button from '../Button';
+import NameOfPlayer from './NameOfPlayer';
+import IconPlayer from './IconPlayer';
 
 const GameSIO = ({ game, me, addPiece, finalizar }) => {
   if (!game) return null;
@@ -29,23 +32,31 @@ const GameSIO = ({ game, me, addPiece, finalizar }) => {
 
       <div className='rival-container'>
         <div className='rival-data'>
-          <span className={ !turn ? 'name playing' : 'name notplaying'}>{ rival.player_name }</span>
-          <span className='pieces-left'><b>{ rival.pieces.length }</b> piezas</span>
+          <IconPlayer on={!turn} />
+          <NameOfPlayer
+            name={rival.player_name}
+            pieceQty={rival.pieces.length}
+            turn={!turn}
+          />
         </div>
         <RivalPieces quantity={rival.pieces.length} />
       </div>
 
-      <div className='player'>
+      <div className='player-container'>
         <div className='player-data'>
-          <span className={ turn ? 'name playing' : 'name notplaying'}>You: { player.player_name }</span>
-          <span className='pieces-left'><b>{ player.pieces.length }</b> piezas</span>
+          <IconPlayer on={turn} />
+          <NameOfPlayer
+            name={player.player_name}
+            pieceQty={player.pieces.length}
+            turn={turn}
+          />
         </div>
         <PlayerPieces pieces={player.pieces} addPiece={addPiece} isPlayerTurn={turn} />
       </div>
 
-      <div>
-        <span style={{ fontSize: '10px', marginRight: '2em' }}>Partida: { game.partida }</span>
-        <button onClick={finalizar}>Finalizar</button>
+      <div className='game-stats-container'>
+        <Button onClick={finalizar}>Finalizar</Button>
+        <span>Partida: { game.partida }</span>
       </div>
 
       <WinnerMessage gameStatus={gameSt} action={finalizar} />

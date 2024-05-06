@@ -11,3 +11,10 @@
   display: flex;
   gap: 4px;
 }
+
+@media screen and (min-width: 1000px) {
+  .board {
+    grid-row: 2 / 8;
+    grid-column: 1 / 6;
+  }
+}
