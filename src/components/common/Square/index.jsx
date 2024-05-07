@@ -1,17 +1,20 @@
 import './index.css';
 
-const Square = ({ value, isActive, visible = true, isHeader = false }) => {
+const Square = ({ value = 0, isActive = false, isHeader = false, width = 25 }) => {
   const squareClass = 'square' + (isActive ? ' active' : '');
-  const headerClass = isHeader ? ' header' : '';
 
   const style = {
-    visibility: `${visible ? 'visible' : 'hidden' }`,
+    width: `${width}px`,
   };
 
   return(
-    <button type='button' className={squareClass + headerClass} style={style}>
-      {value}
-    </button>
+    isHeader
+      ? <button type='button' className='square header' style={style}>
+        { value }
+      </button>
+      : <button type='button' className={squareClass} style={style}>
+        {value}
+      </button>
   );
 };
 

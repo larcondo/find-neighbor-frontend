@@ -4,9 +4,6 @@
 
 .piece {
   margin: 5px;
-  /* width: calc(var(--sq-size) * 3.5); */
-  /* background-color: #333333; */
-  /* background-color: #212121; */
   cursor: pointer;
 }
 
@@ -22,6 +19,10 @@
 
 .piece-shape:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.piece-shape.draggable {
+  border: none;
 }
 
 .SP {
@@ -49,6 +50,13 @@
   border: 0px solid;
   border-radius: 4px;
   cursor: pointer;
+  user-select: none;
+}
+
+.piece-shape.draggable .piece-square {
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
 }
 
 /* Type SP */

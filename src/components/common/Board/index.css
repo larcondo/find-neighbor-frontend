@@ -1,20 +1,33 @@
 .board {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  transform: translateX(-10px);
+  flex-flow: row wrap;
 }
 
-.board-row {
+.header-top {
+  flex: 1 1 100%;
   display: flex;
-  gap: 4px;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.header-left {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.droppable-board {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  box-sizing: border-box;
 }
 
 @media screen and (min-width: 1000px) {
   .board {
     grid-row: 2 / 8;
     grid-column: 1 / 6;
+    align-self: center;
+    justify-self: center;
   }
 }

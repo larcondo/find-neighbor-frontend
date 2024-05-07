@@ -1,5 +1,5 @@
 .square {
-  width: 25px;
+  /* width: 25px; */
   aspect-ratio: 1/1;
   background-color: #424242;
   border: 1px solid transparent;
@@ -7,6 +7,7 @@
   cursor: pointer;
   font-size: 8px;
   color: transparent;
+  user-select: none;
 }
 
 .square:hover {
@@ -20,11 +21,15 @@
 }
 
 .header {
-  /* visibility: hidden; */
   border: none;
   background-color: transparent;
   color: #848484;
   font-size: 12px;
+}
+
+.square.header:hover {
+  border: none;
+  cursor: initial;
 }
 
 @keyframes activatedSquare {

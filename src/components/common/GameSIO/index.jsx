@@ -1,5 +1,7 @@
 import './index.css';
 
+import { DndContext, DragOverlay } from '@dnd-kit/core';
+
 import Board from '../Board';
 import PlayerPieces from '../PlayerPieces';
 import RivalPieces from './RivalPieces';
@@ -7,8 +9,12 @@ import WinnerMessage from '../WinnerMessage';
 import Button from '../Button';
 import NameOfPlayer from './NameOfPlayer';
 import IconPlayer from './IconPlayer';
+import { useState } from 'react';
+import DraggablePiece from '../Piece/DraggablePiece';
 
 const GameSIO = ({ game, me, addPiece, finalizar }) => {
+  const [activePiece, setActivePiece] = useState(null);
+
   if (!game) return null;
   if (!game.player1 || !game.player2) return null;
 
@@ -22,44 +28,67 @@ const GameSIO = ({ game, me, addPiece, finalizar }) => {
     winner: player.pieces.length < 1 ? player.player_name : rival.pieces.length < 1 ? rival.player_name : null
   };
 
+  const handleDragStart = (event) => {
+    if (event.active.data.current) {
+      setActivePiece(event.active.data.current);
+    }
+  };
+
+  const handleDragEnd = (event) => {
+    const { over, active } = event;
+    if (over && over.id === 'droppable') {
+      addPiece(active.data.current);
+    }
+  };
+
   return(
     <div className='game-container'>
-      <h2 className='title'>Find Neighbor</h2>
-      <Board
-        rows={10} columns={10}
-        boardState={board}
-      />
+      <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+        <h2 className='title'>Find Neighbor</h2>
+        <Board boardState={board} />
 
-      <div className='rival-container'>
-        <div className='rival-data'>
-          <IconPlayer on={!turn} />
-          <NameOfPlayer
-            name={rival.player_name}
-            pieceQty={rival.pieces.length}
-            turn={!turn}
-          />
+        <div className='player-container'>
+          <div className='player-data'>
+            <IconPlayer on={turn} />
+            <NameOfPlayer
+              name={player.player_name}
+              pieceQty={player.pieces.length}
+              turn={turn}
+            />
+          </div>
+          <PlayerPieces pieces={player.pieces} isPlayerTurn={turn} />
         </div>
-        <RivalPieces quantity={rival.pieces.length} />
-      </div>
 
-      <div className='player-container'>
-        <div className='player-data'>
-          <IconPlayer on={turn} />
-          <NameOfPlayer
-            name={player.player_name}
-            pieceQty={player.pieces.length}
-            turn={turn}
-          />
+        <div className='rival-container'>
+          <div className='rival-data'>
+            <IconPlayer on={!turn} />
+            <NameOfPlayer
+              name={rival.player_name}
+              pieceQty={rival.pieces.length}
+              turn={!turn}
+            />
+          </div>
+          <RivalPieces quantity={rival.pieces.length} />
         </div>
-        <PlayerPieces pieces={player.pieces} addPiece={addPiece} isPlayerTurn={turn} />
-      </div>
 
-      <div className='game-stats-container'>
-        <Button onClick={finalizar}>Finalizar</Button>
-        <span>Partida: { game.partida }</span>
-      </div>
+        <div className='game-stats-container'>
+          <Button onClick={finalizar}>Finalizar</Button>
+          <span>Partida: { game.partida }</span>
+        </div>
 
-      <WinnerMessage gameStatus={gameSt} action={finalizar} />
+        <DragOverlay dropAnimation={{ duration: 20, easing: 'ease' }}>
+          {
+            activePiece
+              ? <DraggablePiece
+                positions={activePiece.valores}
+                type={activePiece.tipo}
+              />
+              : null
+          }
+        </DragOverlay>
+
+        <WinnerMessage gameStatus={gameSt} action={finalizar} />
+      </DndContext>
     </div>
   );
 };

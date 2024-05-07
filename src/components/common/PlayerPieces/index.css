@@ -5,6 +5,8 @@
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
+  z-index: 3;
+  padding-bottom: 1em;
 }
 
 .player-pieces::-webkit-scrollbar {

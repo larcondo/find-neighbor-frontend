@@ -1,18 +1,29 @@
 import './index.css';
 
-import TopHeader from './TopHeader';
-import BoardRow from './BoardRow';
+import HeaderTop from './HeaderTop';
+import HeaderLeft from './HeaderLeft';
+import DroppableBoard from './DroppableBoard';
 
-const Board = ({ rows, columns, boardState }) => {
+const pSize = 25;
+const bGap = 4;
 
-  if (!rows || !columns) return null;
+const Board = ({ boardState }) => {
 
-  const rowArray = [...Array(rows).keys()];
+  if (!boardState) return null;
+
+  const boardStyle = {
+    width: `${11 * pSize + 10 * bGap}px`,
+  };
 
   return(
-    <div className='board'>
-      <TopHeader length={10} />
-      { rowArray.map( r => <BoardRow length={columns} key={r} nRow={r} boardArray={boardState} />)}
+    <div className='board' style={boardStyle}>
+      <HeaderTop pSize={pSize} bGap={bGap} />
+      <HeaderLeft pSize={pSize} bGap={bGap} />
+      <DroppableBoard
+        boardArray={boardState}
+        pSize={pSize}
+        bGap={bGap}
+      />
     </div>
   );
 };

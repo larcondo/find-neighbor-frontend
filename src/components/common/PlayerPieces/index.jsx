@@ -1,7 +1,7 @@
 import './index.css';
 import Piece from '../Piece';
 
-const PlayerPieces = ({ pieces, addPiece, isPlayerTurn }) => {
+const PlayerPieces = ({ pieces, isPlayerTurn }) => {
   return(
     <div className='player-pieces'>
       { pieces.map(p =>
@@ -9,7 +9,8 @@ const PlayerPieces = ({ pieces, addPiece, isPlayerTurn }) => {
           type={p.tipo}
           positions={p.valores}
           key={p.id}
-          onClick={() => addPiece(p)}
+          id={p.id}
+          pieceComplete={p}
           shadowPiece={!isPlayerTurn}
         />
       )
