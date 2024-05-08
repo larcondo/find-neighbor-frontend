@@ -1,17 +1,26 @@
+:root {
+  --button-color: white;
+  --button-bg-color: steelblue;
+  --button-bg-color-hover: hsl(207, 44%, 44%);
+  --button-details-color: rgba(0,0,0,0.15);
+}
+
 .button {
   padding: 1em 2em;
   border-radius: 0.75em;
   border: none;
   cursor: pointer;
-  background-color: steelblue;
+  background-color: var(--button-bg-color);
   position: relative;
+  color: var(--button-color);
 }
 
 .button:hover {
-  background-color: hsl(207, 44%, 44%);
+  background-color: var(--button-bg-color-hover);
 }
 
-.button::before, .button::after {
+.button::before,
+.button::after {
   content: '';
   width: 6%;
   aspect-ratio: 1 / 1;
@@ -22,15 +31,15 @@
 .button::before {
   top: 5px;
   left: 5px;
-  border-top: 0.25em solid rgba(0,0,0,0.15);
-  border-left: 0.25em solid rgba(0,0,0,0.15);
+  border-top: 0.25em solid var(--button-details-color);
+  border-left: 0.25em solid var(--button-details-color);
   border-radius: 0.5em 0 0 0;
 }
 
 .button::after {
   bottom: 5px;
   right: 5px;
-  border-bottom: 0.25em solid rgba(0,0,0,0.15);
-  border-right: 0.25em solid rgba(0,0,0,0.15);
+  border-bottom: 0.25em solid var(--button-details-color);
+  border-right: 0.25em solid var(--button-details-color);
   border-radius: 0 0 0.5em 0;
 }

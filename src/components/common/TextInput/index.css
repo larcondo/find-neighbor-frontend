@@ -1,3 +1,11 @@
+:root {
+  --invalid-color: hotpink;
+  --valid-color: lightgreen;
+  --message-font-size: 12px;
+  --label-color: #ababab;
+  --label-font-size: 14px;
+}
+
 .text-input {
   display: flex;
   flex-flow: column nowrap;
@@ -8,8 +16,8 @@
 .text-input label {
   text-align: left;
   margin-bottom: 6px;
-  color: #ababab;
-  font-size: 14px;
+  color: var(--label-color);
+  font-size: var(--label-font-size);
 }
 
 .text-input input {
@@ -20,7 +28,7 @@
   margin: 4px 0;
   padding: 0 6px;
   
-  font-size: 12px;
+  font-size: var(--message-font-size);
 
   position: absolute;
   right: 0;
@@ -28,11 +36,11 @@
 }
 
 .text-input .input-error.message {
-  color: hotpink;
+  color: var(--invalid-color);
 }
 
 .text-input .input-valid.message {
-  color: lightgreen;
+  color: var(--valid-color);
 }
 
 .check-icon {

@@ -1,3 +1,7 @@
+:root {
+  --rival-piece-bg-color: deepskyblue;
+}
+
 .rival-pieces {
   display: flex;
   justify-content: center;
@@ -7,7 +11,7 @@
 .rival-piece {
   aspect-ratio: 2/3;
   border-radius: 4px;
-  background-color: deepskyblue;
+  background-color: var(--rival-piece-bg-color);
   box-shadow: 2px 2px 10px 2px black;
   box-sizing: border-box;
   animation: showRivalPieces 1s ease 0s forwards;

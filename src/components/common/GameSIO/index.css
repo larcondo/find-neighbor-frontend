@@ -1,3 +1,12 @@
+:root {
+  --not-playing-bg-color: #404040;
+  --not-playing-color: #929292;
+  --not-playing-icon-color: #888888;
+  --playing-bg-color: green;
+  --playing-color: #e3e3e3;
+  --playing-icon-color: limegreen;
+}
+
 .game-container {
   display: flex;
   flex-direction: column;
@@ -44,44 +53,46 @@
 }
 
 .name-of-player span:nth-child(1) {
-  background-color: #404040;
-  border: 2px solid #404040;
+  background-color: var(--not-playing-bg-color);
+  border: 2px solid var(--not-playing-bg-color);
   border-radius: 6px 0 0 6px;
   padding: 0.5ch 1ch;
   margin: 0;
-  color: #929292;
+  color: var(--not-playing-color);
+  font-size: var(--font-size-small);
 }
 
 .name-of-player span:nth-child(2) {
-  border: 2px solid #404040;
+  border: 2px solid var(--not-playing-bg-color);
   border-radius: 0 6px 6px 0px;
   padding: 0.5ch 1ch;
   margin: 0;
-  color: #929292;
+  color: var(--not-playing-color);
+  font-size: var(--font-size-small);
 }
 
 .name-of-player.playing span:nth-child(1) {
-  background-color: green;
-  border: 2px solid green;
-  color: #e3e3e3;
+  background-color: var(--playing-bg-color);
+  border: 2px solid var(--playing-bg-color);
+  color: var(--playing-color);
 }
 .name-of-player.playing span:nth-child(2) {
-  border: 2px solid green;
-  color: #e3e3e3;
+  border: 2px solid var(--playing-bg-color);
+  color: var(--playing-color);
 }
 
 .name.playing svg {
   padding: 0 2px;
   vertical-align: -0.5em;
   margin: 0 2px;
-  color: limegreen;
+  color: var(--playing-icon-color);
 }
 
 .name.notplaying svg {
   padding: 0 2px;
   vertical-align: -0.5em;
   margin: 0 2px;
-  color: #888888;
+  color: var(--not-playing-icon-color);
 }
 
 .game-stats-container {
@@ -92,7 +103,7 @@
 }
 
 .game-stats-container span {
-  font-size: 12px;
+  font-size: var(--font-size-small);
   margin: 1em 0;
 }
 
@@ -123,6 +134,14 @@
     grid-row: 2 / 9;
     grid-column: 6 / 11;
     align-self: flex-start;
+  }
+
+  .name-of-player span:nth-child(1) {
+    font-size: var(--font-size-normal);
+  }
+  
+  .name-of-player span:nth-child(2) {
+    font-size: var(--font-size-normal);
   }
 
   .game-stats-container {

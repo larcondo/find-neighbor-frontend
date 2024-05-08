@@ -1,16 +1,21 @@
+:root {
+  --connected-color: seagreen;
+  --connected-id-color: darkgray;
+  --connected-font-size: 12px;
+}
+
 .conn-status {
-  /* background-color: darkgreen; */
   position: fixed;
   bottom: -5px;
   left: 5px;
-  font-size: 12px;
+  font-size: var(--connected-font-size);
   padding: 5px 10px;
 }
 
 .conn-status .connected {
-  color: seagreen;
+  color: var(--connected-color);
 }
 
 .conn-status span {
-  color: darkgray;
+  color: var(--connected-id-color);
 }

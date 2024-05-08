@@ -1,3 +1,8 @@
+:root {
+  --scrollbar-bg-color: rgba(255, 255, 255, 0.1);
+  --scrollbar-track-bg-color: rgba(0, 0, 0, 0.1);
+}
+
 .player-pieces {
   width: 350px;
   margin: 0 10px;
@@ -15,17 +20,16 @@
 }
 
 .player-pieces::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,0.1);
+  background-color: var(--scrollbar-bg-color);
   border-radius: 6px;
 }
 
 .player-pieces::-webkit-scrollbar-track {
-  background-color: rgba(0,0,0,0.1);
+  background-color: var(--scrollbar-track-bg-color);
 }
 
 
 .player-pieces::-webkit-scrollbar-button {
-  background-color: yellow;
   width: 0px;
   height: 0px;
 }

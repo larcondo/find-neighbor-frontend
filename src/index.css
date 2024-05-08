@@ -11,6 +11,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* General */
+  --font-size-small: 12px;
+  --font-size-normal: 1em;
 }
 
 body {
