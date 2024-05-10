@@ -6,9 +6,13 @@
   --square-active-bg-color: steelblue;
   --header-color: #848484;
   --header-font-size: 11px;
+
+  --sq-small-size: 25px;
+  --sq-big-size: 30px;
 }
 
 .square {
+  width: var(--sq-small-size);
   aspect-ratio: 1/1;
   background-color: var(--square-bg-color);
   border: 1px solid var(--square-border-color);
@@ -52,5 +56,11 @@
   100% {
     background-color: var(--square-active-bg-color);
     transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .square {
+    width: var(--sq-big-size);
   }
 }

@@ -124,18 +124,19 @@
     justify-self: center;
   }
   
-  .rival-container {
-    grid-row: 8 / 11;
-    grid-column: 1 / 6;
-    align-self: center;
-  }
-  
   .player-container {
     grid-row: 2 / 9;
     grid-column: 6 / 11;
     align-self: flex-start;
   }
 
+  .rival-container {
+    grid-row: 8 / 11;
+    grid-column: 6 / 11;
+    align-self: stretch;
+    justify-content: center;
+  }
+  
   .name-of-player span:nth-child(1) {
     font-size: var(--font-size-normal);
   }
@@ -146,7 +147,7 @@
 
   .game-stats-container {
     grid-row: 9 / 11;
-    grid-column: 6 / 11;
+    grid-column: 1 / 6;
     display: flex;
     flex-flow: column;
     align-items: center;

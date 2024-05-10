@@ -1,18 +1,13 @@
 import Square from '../Square';
 
-const HeaderTop = ({ pSize = 25, bGap = 4 }) => {
+const HeaderTop = () => {
   const values = [...Array(10).keys()];
 
-  const headerStyle = {
-    gap: `${bGap}px`,
-    marginBottom: `${bGap}px`,
-  };
-
   return(
-    <div className='header-top' style={headerStyle}>
+    <div className='header-top'>
       {
         values.map(e =>
-          <Square key={e} width={pSize} isHeader value={e} />
+          <Square key={e} isHeader value={e} />
         )
       }
     </div>
